@@ -3,7 +3,6 @@
 <img src="docs/banner.png" alt="Nyx Utils" width="100%"/>
 
 **A just-for-fun Fabric utility client for Minecraft 1.21.11.**
-No cheats, just an arcade, chat toys and screen effects.
 
 </div>
 
