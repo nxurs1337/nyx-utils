@@ -1,0 +1,35 @@
+package dev.nyx.utils.util;
+
+import dev.cattyn.catformat.CatFormat;
+import dev.cattyn.catformat.fabric.FabricCatFormat;
+import dev.nyx.utils.NyxUtils;
+import net.minecraft.network.chat.MutableComponent;
+
+public final class TextUtil {
+    private static CatFormat<MutableComponent> formatter;
+
+    private TextUtil() {
+        throw new AssertionError("Can't create an instance of utility class");
+    }
+
+    public static void init() {
+        if (formatter != null) throw new IllegalStateException("Formatter is already initialized");
+        formatter = new FabricCatFormat(true);
+        initColors();
+    }
+
+    public static MutableComponent text(String content, Object... obj) {
+        if (obj == null || obj.length == 0) {
+            return formatter.format(content);
+        }
+        return formatter.format(content, obj);
+    }
+
+    public static CatFormat<MutableComponent> getFormatter() {
+        return formatter;
+    }
+
+    private static void initColors() {
+        formatter.add("global", () -> NyxUtils.colorManager.getColorAsInt());
+    }
+}

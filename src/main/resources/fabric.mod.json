@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "nyxutils",
+  "version": "${version}",
+  "name": "Nyx Utils",
+  "description": "A just-for-fun utility client: an arcade full of games, chat toys and screen effects.",
+  "authors": [
+    "3arthqu4ke",
+    "alpha432",
+    "cattyn"
+  ],
+  "license": "MIT",
+  "icon": "assets/nyxutils/icon.png",
+  "environment": "client",
+  "accessWidener": "nyxutils.accesswidener",
+  "entrypoints": {
+    "client": [
+      "dev.nyx.utils.NyxUtils"
+    ],
+    "main": [
+      "dev.nyx.utils.NyxUtils"
+    ]
+  },
+  "mixins": [
+    "nyxutils.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

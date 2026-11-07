@@ -1,0 +1,28 @@
+# IDEs
+.idea
+*.iml
+*.ipr
+*.iws
+out
+.vscode
+.settings
+.metadata
+.classpath
+.project
+bin
+*.launch
+
+# Gradle (the wrapper jar is committed so ./gradlew works after cloning)
+build
+.gradle
+
+# Minecraft dev client
+run
+/logs/
+
+# OS / misc
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak
+*.log

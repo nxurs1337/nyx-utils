@@ -1,0 +1,7 @@
+accessWidener v2 named
+
+accessible field com/mojang/blaze3d/platform/InputConstants$Type map Lit/unimi/dsi/fastutil/ints/Int2ObjectMap;
+
+accessible field net/minecraft/world/entity/WalkAnimationState speedOld F
+accessible field net/minecraft/world/entity/WalkAnimationState speed F
+accessible field net/minecraft/world/entity/WalkAnimationState position F

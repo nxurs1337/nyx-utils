@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.nyx.utils.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "network.MixinConnection"
+  ],
+  "client": [
+    "entity.MixinClientPlayerEntity",
+    "input.MixinKeyboardHandler",
+    "input.MixinMouseHandler",
+    "network.MixinClientPacketListener",
+    "render.MixinChatComponent",
+    "render.MixinEntityRenderDispatcher",
+    "render.MixinLevelRenderer",
+    "render.gui.MixinCommandSuggestions",
+    "render.gui.MixinGui"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

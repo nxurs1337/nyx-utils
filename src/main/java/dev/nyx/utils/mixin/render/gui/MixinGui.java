@@ -1,0 +1,28 @@
+package dev.nyx.utils.mixin.render.gui;
+
+import dev.nyx.utils.event.impl.render.Render2DEvent;
+import net.minecraft.client.DeltaTracker;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.GuiGraphics;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import static dev.nyx.utils.util.traits.Util.EVENT_BUS;
+import static dev.nyx.utils.util.traits.Util.mc;
+
+@Mixin(Gui.class)
+public class MixinGui {
+
+    @Inject(method = "render", at = @At("RETURN"))
+    public void render(GuiGraphics context, DeltaTracker tickCounter, CallbackInfo ci) {
+        boolean debugOpen = mc.debugEntries.isOverlayVisible();
+
+        if (debugOpen) return;
+
+        Render2DEvent event = new Render2DEvent(context, tickCounter.getGameTimeDeltaPartialTick(true));
+        EVENT_BUS.post(event);
+    }
+
+}
