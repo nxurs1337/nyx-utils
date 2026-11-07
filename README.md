@@ -46,6 +46,8 @@ Requires JDK 21 or newer.
 
 The mod jar ends up in `build/libs/`. `./gradlew runClient` starts a development client.
 
+## Base
+https://github.com/mioclient/oyvey-ported
 
 ## License
 [MIT](LICENSE)
